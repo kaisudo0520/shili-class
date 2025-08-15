@@ -24,10 +24,13 @@
             </nav>
             <div class="header-actions">
                 <div class="department-section nav-item-dropdown">
-                    <button class="department-button nav-link">部門選擇</button>
+                    <button class="department-button nav-link" id="departmentBtn">部門選擇</button>
                     <ul class="dropdown-menu">
                         <li class="dropdown-department">
-                            <a href="#" class="dropdown-link department-main">土木部</a>
+                            <a href="#" class="dropdown-link department-main" data-department="全部">全部</a>
+                        </li>
+                        <li class="dropdown-department">
+                            <a href="#" class="dropdown-link department-main" data-department="土木部">土木部</a>
                             <ul class="sub-dropdown-menu">
                                 <li><a href="#" class="sub-dropdown-link">最新消息</a></li>
                                 <li><a href="#" class="sub-dropdown-link">課程導覽</a></li>
@@ -37,7 +40,7 @@
                             </ul>
                         </li>
                         <li class="dropdown-department">
-                            <a href="#" class="dropdown-link department-main">建築部</a>
+                            <a href="#" class="dropdown-link department-main" data-department="建築部">建築部</a>
                             <ul class="sub-dropdown-menu">
                                 <li><a href="#" class="sub-dropdown-link">最新消息</a></li>
                                 <li><a href="#" class="sub-dropdown-link">課程導覽</a></li>
@@ -47,7 +50,7 @@
                             </ul>
                         </li>
                         <li class="dropdown-department">
-                            <a href="#" class="dropdown-link department-main">都計部</a>
+                            <a href="#" class="dropdown-link department-main" data-department="都計部">都計部</a>
                             <ul class="sub-dropdown-menu">
                                 <li><a href="#" class="sub-dropdown-link">最新消息</a></li>
                                 <li><a href="#" class="sub-dropdown-link">課程導覽</a></li>
@@ -57,7 +60,7 @@
                             </ul>
                         </li>
                         <li class="dropdown-department">
-                            <a href="#" class="dropdown-link department-main">室內部</a>
+                            <a href="#" class="dropdown-link department-main" data-department="室內部">室內部</a>
                             <ul class="sub-dropdown-menu">
                                 <li><a href="#" class="sub-dropdown-link">最新消息</a></li>
                                 <li><a href="#" class="sub-dropdown-link">課程導覽</a></li>
@@ -152,7 +155,8 @@
         const loginBtn = document.getElementById('loginBtn');
         const userAvatarSection = document.getElementById('userAvatarSection');
         const logoutBtn = document.getElementById('logoutBtn');
-
+        const departmentBtn = document.getElementById('departmentBtn');
+        
         // 會員登入按鈕點擊事件
         loginBtn.addEventListener('click', function() {
             loginBtn.style.display = 'none';
@@ -164,6 +168,19 @@
             e.preventDefault();
             userAvatarSection.style.display = 'none';
             loginBtn.style.display = 'block';
+        });
+
+        // 部門選擇功能
+        const departmentLinks = document.querySelectorAll('.department-main[data-department]');
+        departmentLinks.forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                const departmentName = this.getAttribute('data-department');
+                departmentBtn.textContent = departmentName;
+                
+                // 可以在這裡添加其他邏輯，比如顯示對應部門的內容
+                console.log('選擇的部門:', departmentName);
+            });
         });
     </script>
 </body>
