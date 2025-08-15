@@ -115,11 +115,88 @@ body {
 
 .header-actions {
     display: flex;
+    align-items: center;
     gap: 15px;
 }
 
 .user-section {
     position: relative;
+}
+
+.department-section {
+    position: relative;
+}
+
+.department-button {
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    border: 2px solid white;
+    padding: 10px 20px;
+    border-radius: 25px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.department-button:hover {
+    background: white;
+    color: #8b3dff;
+}
+
+.dropdown-department {
+    position: relative;
+}
+
+.department-main {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.department-main:after {
+    content: "▶";
+    font-size: 12px;
+    margin-left: 8px;
+}
+
+.sub-dropdown-menu {
+    position: absolute;
+    left: 100%;
+    top: 0;
+    background: white;
+    min-width: 140px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    border-radius: 8px;
+    overflow: hidden;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateX(-10px);
+    transition: all 0.3s ease;
+    z-index: 1001;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.dropdown-department:hover .sub-dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(0);
+}
+
+.sub-dropdown-link {
+    display: block;
+    color: #333;
+    text-decoration: none;
+    padding: 10px 14px;
+    font-weight: 400;
+    font-size: 14px;
+    transition: background-color 0.3s;
+}
+
+.sub-dropdown-link:hover {
+    background-color: #f8f9fa;
+    color: #8b3dff;
 }
 
 .cta-button {
