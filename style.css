@@ -1,0 +1,476 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Microsoft JhengHei', sans-serif;
+    background-color: #f5f5f5;
+    color: #333;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Header */
+.header {
+    background: linear-gradient(135deg, #ff6b9d, #c44dff);
+    padding: 15px 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.header .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 24px;
+    font-weight: bold;
+    color: white;
+    text-decoration: none;
+    transition: opacity 0.3s;
+}
+
+.logo:hover {
+    opacity: 0.8;
+}
+
+.logo-icon {
+    font-size: 28px;
+}
+
+.nav-list {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+}
+
+.nav-item-dropdown {
+    position: relative;
+}
+
+.nav-link {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    padding: 8px 12px;
+    border-radius: 6px;
+    transition: background-color 0.3s;
+    display: block;
+}
+
+.nav-link:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: white;
+    min-width: 150px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    border-radius: 8px;
+    overflow: hidden;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: all 0.3s ease;
+    z-index: 1000;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.nav-item-dropdown:hover .dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.dropdown-link {
+    color: #333;
+    text-decoration: none;
+    padding: 12px 16px;
+    display: block;
+    font-weight: 500;
+    transition: background-color 0.3s;
+}
+
+.dropdown-link:hover {
+    background-color: #f8f9fa;
+    color: #8b3dff;
+}
+
+.header-actions {
+    display: flex;
+    gap: 15px;
+}
+
+.user-section {
+    position: relative;
+}
+
+.cta-button {
+    background: linear-gradient(135deg, #8b3dff, #6b2ae6);
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 25px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+.cta-button:hover {
+    transform: translateY(-2px);
+}
+
+.login-button {
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    border: 2px solid white;
+    padding: 10px 20px;
+    border-radius: 25px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.login-button:hover {
+    background: white;
+    color: #8b3dff;
+}
+
+.user-avatar-section {
+    position: relative;
+}
+
+.user-avatar {
+    width: 40px;
+    height: 40px;
+    background: linear-gradient(135deg, #8b3dff, #6b2ae6);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.user-avatar:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 15px rgba(139, 61, 255, 0.3);
+}
+
+.avatar-icon {
+    color: white;
+    font-size: 20px;
+}
+
+.user-dropdown {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background: white;
+    min-width: 160px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    border-radius: 8px;
+    overflow: hidden;
+    z-index: 1000;
+    margin-top: 8px;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: all 0.3s ease;
+}
+
+.user-avatar-section:hover .user-dropdown {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.user-info {
+    background: linear-gradient(135deg, #8b3dff, #6b2ae6);
+    color: white;
+    padding: 12px 16px;
+    text-align: center;
+}
+
+.user-name {
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.user-menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.user-link {
+    display: block;
+    color: #333;
+    text-decoration: none;
+    padding: 12px 16px;
+    font-weight: 500;
+    transition: background-color 0.3s;
+}
+
+.user-link:hover {
+    background-color: #f8f9fa;
+    color: #8b3dff;
+}
+
+/* Hero Section */
+.hero {
+    position: relative;
+    height: 500px;
+    background: linear-gradient(135deg, #ffd1dc, #ffb6c1, #ffc0cb);
+    overflow: hidden;
+}
+
+.hero-container {
+    position: relative;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-content {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500"><defs><radialGradient id="blossom" cx="50%" cy="50%" r="3"><stop offset="0%" style="stop-color:%23ffb3ba;stop-opacity:0.8"/><stop offset="100%" style="stop-color:%23ff7a85;stop-opacity:0.4"/></radialGradient></defs><rect width="800" height="500" fill="%23ffd1dc"/><path d="M50 300 Q200 200 400 250 T750 300" stroke="%236b4226" stroke-width="15" fill="none"/><path d="M150 350 Q300 250 500 300 T850 350" stroke="%236b4226" stroke-width="12" fill="none"/><circle cx="100" cy="250" r="8" fill="url(%23blossom)"/><circle cx="180" cy="200" r="6" fill="url(%23blossom)"/><circle cx="250" cy="180" r="7" fill="url(%23blossom)"/><circle cx="320" cy="220" r="5" fill="url(%23blossom)"/><circle cx="420" cy="280" r="8" fill="url(%23blossom)"/><circle cx="520" cy="250" r="6" fill="url(%23blossom)"/><circle cx="620" cy="220" r="7" fill="url(%23blossom)"/><circle cx="720" cy="280" r="5" fill="url(%23blossom)"/></svg>') center/cover;
+}
+
+.anime-character {
+    position: absolute;
+    right: 20%;
+    bottom: 10%;
+    width: 200px;
+    height: 250px;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 250"><rect width="200" height="250" fill="%23e6f3ff" rx="20"/><circle cx="100" cy="80" r="40" fill="%23fdbcb4"/><circle cx="85" cy="75" r="3" fill="%23333"/><circle cx="115" cy="75" r="3" fill="%23333"/><path d="M90 90 Q100 95 110 90" stroke="%23ff69b4" stroke-width="2" fill="none"/><rect x="60" y="120" width="80" height="100" fill="%234a90e2" rx="10"/><rect x="80" y="220" width="15" height="30" fill="%23fdbcb4"/><rect x="105" y="220" width="15" height="30" fill="%23fdbcb4"/><path d="M40 40 Q100 20 160 40 Q140 60 100 50 Q60 60 40 40" fill="%23b8860b"/></svg>') center/contain no-repeat;
+}
+
+.hero-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255, 255, 255, 0.8);
+    border: none;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    font-size: 24px;
+    color: #8b3dff;
+    cursor: pointer;
+    transition: all 0.3s;
+    z-index: 10;
+}
+
+.hero-nav:hover {
+    background: white;
+    transform: translateY(-50%) scale(1.1);
+}
+
+.hero-nav-prev {
+    left: 30px;
+}
+
+.hero-nav-next {
+    right: 30px;
+}
+
+/* Latest News Section */
+.latest-news {
+    padding: 60px 0;
+    background: white;
+}
+
+.section-title {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 40px;
+    color: #333;
+}
+
+.title-icon {
+    font-size: 28px;
+}
+
+.course-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 30px;
+}
+
+.course-card {
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+    cursor: pointer;
+}
+
+.course-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+}
+
+.course-image {
+    height: 200px;
+    position: relative;
+    overflow: hidden;
+}
+
+.course-bg {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #ffd1dc, #ffb6c1);
+    background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 200"><defs><radialGradient id="sakura" cx="50%" cy="50%" r="4"><stop offset="0%" style="stop-color:%23ffb3ba;stop-opacity:0.9"/><stop offset="100%" style="stop-color:%23ff7a85;stop-opacity:0.5"/></radialGradient></defs><rect width="400" height="200" fill="%23ffd1dc"/><path d="M20 150 Q100 100 200 125 T380 150" stroke="%236b4226" stroke-width="8" fill="none"/><circle cx="50" cy="125" r="5" fill="url(%23sakura)"/><circle cx="120" cy="100" r="4" fill="url(%23sakura)"/><circle cx="180" cy="115" r="5" fill="url(%23sakura)"/><circle cx="250" cy="130" r="4" fill="url(%23sakura)"/><circle cx="320" cy="140" r="5" fill="url(%23sakura)"/><rect x="150" y="80" width="100" height="120" fill="%23e6f3ff" rx="15"/><circle cx="200" cy="120" r="25" fill="%23fdbcb4"/><circle cx="190" cy="115" r="2" fill="%23333"/><circle cx="210" cy="115" r="2" fill="%23333"/><path d="M185 130 Q200 135 215 130" stroke="%23ff69b4" stroke-width="1.5" fill="none"/><rect x="175" y="145" width="50" height="40" fill="%234a90e2" rx="5"/><path d="M160 90 Q200 75 240 90 Q220 105 200 100 Q180 105 160 90" fill="%23b8860b"/></svg>');
+    background-size: cover;
+    background-position: center;
+}
+
+.course-info {
+    padding: 20px;
+}
+
+.course-tag {
+    display: inline-block;
+    padding: 6px 15px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: bold;
+    margin-bottom: 12px;
+}
+
+.white-course {
+    background: #f8f9fa;
+    color: #666;
+    border: 1px solid #dee2e6;
+}
+
+.blue-course {
+    background: #e3f2fd;
+    color: #1976d2;
+    border: 1px solid #bbdefb;
+}
+
+.green-course {
+    background: #e8f5e8;
+    color: #388e3c;
+    border: 1px solid #c8e6c9;
+}
+
+.course-title {
+    font-size: 16px;
+    font-weight: bold;
+    line-height: 1.4;
+    margin-bottom: 8px;
+    color: #333;
+}
+
+.course-description {
+    font-size: 14px;
+    color: #666;
+    line-height: 1.5;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .header .container {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .nav-list {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+    }
+    
+    .hero {
+        height: 350px;
+    }
+    
+    .hero-nav {
+        width: 40px;
+        height: 40px;
+        font-size: 20px;
+    }
+    
+    .hero-nav-prev {
+        left: 15px;
+    }
+    
+    .hero-nav-next {
+        right: 15px;
+    }
+    
+    .anime-character {
+        width: 150px;
+        height: 180px;
+        right: 10%;
+    }
+    
+    .course-cards {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .section-title {
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 0 15px;
+    }
+    
+    .logo {
+        font-size: 20px;
+    }
+    
+    .nav-link {
+        padding: 6px 10px;
+        font-size: 14px;
+    }
+    
+    .cta-button, .login-button {
+        padding: 8px 16px;
+        font-size: 14px;
+    }
+    
+    .hero {
+        height: 300px;
+    }
+    
+    .anime-character {
+        width: 120px;
+        height: 150px;
+    }
+    
+    .latest-news {
+        padding: 40px 0;
+    }
+}
